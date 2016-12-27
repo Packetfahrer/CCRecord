@@ -1,0 +1,10 @@
+Package: com.cabralcole.ccrecord
+Name: CCRecord
+Depends: mobilesubstrate, firmware (>= 10.0)
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Screen recording in control center.
+Maintainer: cole cabral
+Depiction: https://cydia.ccabral.us/repo/ccrecord/index.html
+Author: cole cabral
+Section: Tweaks
