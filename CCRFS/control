@@ -1,0 +1,9 @@
+Package: com.cabralcole.ccrecordflipswitch
+Name: CCRecord Flipswitch
+Depends: mobilesubstrate, com.cabralcole.ccrecord, com.a3tweaks.flipswitch, firmware (>= 10.1)
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Flipswitch for CCRecord.
+Maintainer: cole cabral
+Author: cole cabral
+Section: Addons (Flipswitch)
