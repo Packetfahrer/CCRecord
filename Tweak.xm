@@ -1,4 +1,49 @@
-#import "../CC.h"
+#import "CC.h"
+//#import <os/log.h>
+#import "libstatusbar/LSStatusBarItem.h"
+
+LSStatusBarItem *item;
+
+static void updateIcon(BOOL state) {
+
+	dlopen("/usr/lib/libstatusbar.dylib", RTLD_LAZY);
+    Class lss = objc_getClass("LSStatusBarItem");
+
+
+    if (lss) {
+
+    	if (!item) {
+
+    	item = [[%c(LSStatusBarItem) alloc] initWithIdentifier:@"com.cabralcole.ccrecord" alignment:StatusBarAlignmentRight];
+
+    	}
+
+
+    	if(state) {
+
+
+    	// item = [[%c(LSStatusBarItem) alloc] initWithIdentifier:@"ibstatusbar.Play" alignment:StatusBarAlignmentRight];
+		item.imageName = @"ScreenRecording";
+		item.visible = YES;
+		[item update];
+
+    	
+
+
+		} else {
+
+		item.visible = NO;
+		[item update];
+
+		item = nil;
+
+
+	}
+}
+
+}
+
+
 
 static BOOL overrideInternal;
 
@@ -45,7 +90,31 @@ extern "C" BOOL MGGetBoolAnswer(CFStringRef);
 
 - (UIImage *)glyphImageForState:(UIControlState)state
 {
-	return [UIImage imageNamed:@"RecordVideo-OrbHW@2x.png" inBundle:[NSBundle bundleWithPath:@"/Applications/Camera.app/"]];
+	
+
+	return [UIImage imageNamed:@"CR@2x.png" inBundle:[NSBundle bundleWithPath:@"/Library/Application Support/CCRecord/"]];
+}
+
+
+- (void)_startRecording{
+
+
+
+	updateIcon(YES);
+
+
+	%orig();
+
+	
+
+}
+
+- (void)_stopRecording{
+
+	updateIcon(NO);
+
+	%orig();
+
 }
 
 

@@ -1,9 +1,11 @@
 Package: com.cabralcole.ccrecord
 Name: CCRecord
 Depends: mobilesubstrate, firmware (>= 10.0)
-Version: 0.0.1
+Recommends: org.thebigboss.libstatus9
+Version: 2.0.0
 Architecture: iphoneos-arm
 Description: Screen recording in control center.
 Maintainer: cole cabral
 Author: cole cabral
 Section: Tweaks
+Depiction: 
